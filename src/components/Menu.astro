@@ -1,0 +1,37 @@
+---
+import Logo from "./Logo.astro";
+import SearchBar from "../components/SearchBar";
+---
+<style>
+  nav {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    height: 25px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  ul li {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+  }
+</style>
+
+<nav>
+  <Logo />
+  <ul>
+    <li>Playas</li>
+    <li>Ríos</li>
+    <li>Lugares turísticos</li>
+    <li>Actividades</li>
+  </ul>
+  <SearchBar />
+</nav>

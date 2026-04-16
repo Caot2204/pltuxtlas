@@ -1,0 +1,13 @@
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.search-input {
+  border-radius: 10px;
+}
+
+.search-icon {
+  cursor: pointer;
+}

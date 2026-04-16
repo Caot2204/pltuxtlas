@@ -1,0 +1,30 @@
+---
+const { pageRef, name, imageUrl } = Astro.props;
+---
+
+<div class="place-item-container">
+  <img class="place-item-image" src={imageUrl} />
+  <p class="place-item-name">
+    <a href={pageRef}>{name}</a>
+  </p>
+</div>
+
+<style>
+  .place-item-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .place-item-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 black;
+  }
+
+  .place-item-name {
+    font-size: 1.2rem;
+    color: black;
+  }
+</style>

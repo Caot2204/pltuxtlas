@@ -1,0 +1,58 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { Image } from "astro:assets";
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout titlePage={frontmatter.name}>
+  <div class=`place-container ${frontmatter.category}`>
+    <h1>{frontmatter.name}</h1>
+    <div class="hero-data">
+      <Image class="hero-place" src={frontmatter.hero} alt=`Imagen de ${frontmatter.name}` />
+    </div>
+    <slot />
+  </div>
+</BaseLayout>
+
+<style>
+  .place-container {
+    padding: 8px 100px;
+  }
+
+  .place-container > * {
+    margin-bottom: 20px;
+  }
+
+  .turistico {
+    background-image: 
+      url("../icons/liana.png"),
+      url("../icons/liana.png");
+      
+    background-position: 
+      left top,
+      right top;
+
+    background-repeat: 
+      repeat-y,
+      repeat-y;
+
+    background-size: 
+      contain,
+      contain;
+  }
+
+  .hero-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-place {
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px 0 black;
+  }
+</style>
