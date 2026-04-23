@@ -9,7 +9,7 @@ const places = defineCollection({
     hero: image(),
     category: z.string(),
     ubication: z.string(),
-    images: z.array(z.string()),
+    images: z.array(image()),
     youtubeIds: z.array(z.string())
   })
 });

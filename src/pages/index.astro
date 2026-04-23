@@ -14,7 +14,7 @@ const allPlaces = await getCollection("places");
         <PlaceItem
           pageRef={`./${place.id}`}
           name={place.data.name}
-          imageUrl={place.data.hero}
+          hero={place.data.hero}
         />
       ))
     }

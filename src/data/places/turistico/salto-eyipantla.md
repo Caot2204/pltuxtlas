@@ -4,8 +4,16 @@ name: 'Salto de Eyipantla'
 hero: './salto-eyipantla-hero.webp'
 category: 'turistico'
 ubication: 'San Andrés Tuxtla, Ver.'
-images: ['']
-youtubeIds: ['']
+images: [
+  './salto-eyipantla-1.jpg',
+  './salto-eyipantla-2.jpg',
+  './salto-eyipantla-3.jpg'
+]
+youtubeIds: [
+  'FUzbtt9yGnA',
+  'h8sszdyQN1w',
+  'SgAQPdxzhmA'
+]
 ---
 
 El Salto de Eyipantla es uno de los tesoros naturales más impresionantes de la región de Los Tuxtlas, aquí en San Andrés Tuxtla. Si estás planeando darte una vuelta por allá, aquí tienes los detalles clave para tu visita:

@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@astro-community/astro-embed-youtube':
+        specifier: ^0.5.10
+        version: 0.5.10
       '@astrojs/preact':
         specifier: ^5.1.1
         version: 5.1.1(@babel/core@7.29.0)(preact@10.29.1)(rollup@4.60.1)
@@ -19,6 +22,9 @@ importers:
         version: 10.29.1
 
 packages:
+
+  '@astro-community/astro-embed-youtube@0.5.10':
+    resolution: {integrity: sha512-hVlx77KQLjKzElVQnrU5znQ5/E60keVSAPrhuWvQQHuqva5auJtt8YBpOThkwDMuEKXjQybEF1/3C07RZ8MAOQ==}
 
   '@astrojs/compiler@3.0.1':
     resolution: {integrity: sha512-z97oYbdebO5aoWzuJ/8q5hLK232+17KcLZ7cJ8BCWk6+qNzVxn/gftC0KzMBUTD8WAaBkPpNSQK6PXLnNrZ0CA==}
@@ -1048,6 +1054,9 @@ packages:
   kolorist@1.8.0:
     resolution: {integrity: sha512-Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ==}
 
+  lite-youtube-embed@0.3.4:
+    resolution: {integrity: sha512-aXgxpwK7AIW58GEbRzA8EYaY4LWvF3FKak6B9OtSJmuNyLhX2ouD4cMTxz/yR5HFInhknaYd2jLWOTRTvT8oAw==}
+
   longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
 
@@ -1655,6 +1664,10 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
 snapshots:
+
+  '@astro-community/astro-embed-youtube@0.5.10':
+    dependencies:
+      lite-youtube-embed: 0.3.4
 
   '@astrojs/compiler@3.0.1': {}
 
@@ -2712,6 +2725,8 @@ snapshots:
   json5@2.2.3: {}
 
   kolorist@1.8.0: {}
+
+  lite-youtube-embed@0.3.4: {}
 
   longest-streak@3.1.0: {}
 

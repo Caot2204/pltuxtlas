@@ -1,23 +1,50 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import Carrousel from "../components/Carrousel";
 import { Image } from "astro:assets";
+import { YouTube } from "@astro-community/astro-embed-youtube";
 
 const { frontmatter } = Astro.props;
+const carouselImages =
+  frontmatter.images?.map((image: any) =>
+    typeof image === "string" ? image : image?.src || image,
+  ) ?? [];
 ---
 
 <BaseLayout titlePage={frontmatter.name}>
   <div class=`place-container ${frontmatter.category}`>
     <h1>{frontmatter.name}</h1>
     <div class="hero-data">
-      <Image class="hero-place" src={frontmatter.hero} alt=`Imagen de ${frontmatter.name}` />
+      <Image
+        class="hero-place"
+        src={frontmatter.hero}
+        alt=`Imagen de ${frontmatter.name}`
+      />
     </div>
     <slot />
+    <h2>Conoce más de <em>{frontmatter.name}</em></h2>
+    <div class="carrousel-div">
+      <Carrousel
+        imagenes={carouselImages}
+        placeName={frontmatter.name}
+        client:visible
+      />
+    </div>
+    <section class="ytvideos-section">
+      {
+        frontmatter.youtubeIds &&
+          frontmatter.youtubeIds.map((videoId: string) => (
+            <YouTube class="youtube-video" id={videoId} />
+          ))
+      }
+    </section>
   </div>
 </BaseLayout>
 
 <style>
   .place-container {
-    padding: 8px 100px;
+    margin-top: 4px;
+    padding: 8px 150px;
   }
 
   .place-container > * {
@@ -25,21 +52,9 @@ const { frontmatter } = Astro.props;
   }
 
   .turistico {
-    background-image: 
-      url("../icons/liana.png"),
-      url("../icons/liana.png");
-      
-    background-position: 
-      left top,
-      right top;
-
-    background-repeat: 
-      repeat-y,
-      repeat-y;
-
-    background-size: 
-      contain,
-      contain;
+    background-image: url("../icons/fondo-turistico.webp");
+    background-repeat: repeat-y;
+    background-size: contain;
   }
 
   .hero-data {
@@ -50,9 +65,28 @@ const { frontmatter } = Astro.props;
   }
 
   .hero-place {
-    width: 50%;
+    width: 90%;
     height: 50%;
     border-radius: 10px;
     box-shadow: 0 4px 4px 0 black;
+  }
+
+  .carrousel-div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ytvideos-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .youtube-video {
+    width: min(100%, 800px);
+    max-width: 100%;
+    border-radius: 10px;
   }
 </style>

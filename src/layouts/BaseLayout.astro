@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
-import Menu from "../components/Menu.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 const { titlePage } = Astro.props;
 ---
@@ -15,7 +16,22 @@ const { titlePage } = Astro.props;
 		<title>{titlePage}</title>
 	</head>
 	<body>
-		<Menu />
-    <slot />
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
 	</body>
 </html>
+
+<style>
+	body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	main {
+		flex: 1;
+	}
+</style>

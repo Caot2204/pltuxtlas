@@ -9,6 +9,8 @@ const titleSite = "Pasea por Los Tuxtlas";
     flex-direction: row;
     align-items: center;
     gap: 1rem;
+    text-decoration: none;
+    color: black;
   }
 
   .title-logo {
@@ -17,7 +19,7 @@ const titleSite = "Pasea por Los Tuxtlas";
   }
 </style>
 
-<div class="logo-data">
+<a class="logo-data" href="/">
   <Image src={logo} alt="Logo pagina" width={50} height={50} />
   <h1 class="title-logo"><i>{titleSite}</i></h1>
-</div>
+</a>

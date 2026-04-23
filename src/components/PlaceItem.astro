@@ -1,9 +1,10 @@
 ---
-const { pageRef, name, imageUrl } = Astro.props;
+import { Image } from "astro:assets";
+const { pageRef, name, hero } = Astro.props;
 ---
 
 <div class="place-item-container">
-  <img class="place-item-image" src={imageUrl} />
+  <Image class="place-item-image" src={hero} alt={`Imagen de ${name}`} />
   <p class="place-item-name">
     <a href={pageRef}>{name}</a>
   </p>
@@ -14,6 +15,7 @@ const { pageRef, name, imageUrl } = Astro.props;
     display: flex;
     flex-direction: row;
     gap: 20px;
+    align-items: center;
   }
 
   .place-item-image {
@@ -25,6 +27,11 @@ const { pageRef, name, imageUrl } = Astro.props;
 
   .place-item-name {
     font-size: 1.2rem;
+    color: black;
+  }
+
+  a {
+    text-decoration: none;
     color: black;
   }
 </style>
