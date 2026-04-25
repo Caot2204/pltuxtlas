@@ -1,5 +1,4 @@
 import '../styles/search-bar.css';
-import searchIcon from "../icons/material-symbols--search.svg";
 
 export default function SearchButton() {
 

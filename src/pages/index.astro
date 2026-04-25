@@ -1,22 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PlaceItem from "../components/PlaceItem.astro";
+import PlacesList from "../components/PlacesList.astro";
+import PlaceSugestion from "../components/PlaceSugestion";
 import { getCollection } from "astro:content";
 
 const titlePage = "Pasea por Los Tuxtlas";
 const allPlaces = await getCollection("places");
+const initialPlace = allPlaces[Math.floor(Math.random() * allPlaces.length)].data;
 ---
 
 <BaseLayout titlePage={titlePage}>
-  <ul>
-    {
-      allPlaces.map((place: any) => (
-        <PlaceItem
-          pageRef={`./${place.id}`}
-          name={place.data.name}
-          hero={place.data.hero}
-        />
-      ))
-    }
-  </ul>
+  <PlaceSugestion places={allPlaces} initialPlace={initialPlace} client:load />
+  <PlacesList places={allPlaces} />  
 </BaseLayout>

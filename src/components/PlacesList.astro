@@ -1,0 +1,33 @@
+---
+import PlaceItem from "./PlaceItem.astro";
+const { places } = Astro.props;
+---
+
+<section class="places-section">
+  <h3>Conoce más lugares:</h3>
+  <div class="places-list">
+    {
+      places.map((place: any) => (
+        <PlaceItem
+          pageRef={`./${place.id}`}
+          name={place.data.name}
+          hero={place.data.hero}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .places-section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .places-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+  }
+</style>
