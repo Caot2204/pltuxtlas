@@ -6,7 +6,7 @@ import { getCollection } from "astro:content";
 
 const titlePage = "Pasea por Los Tuxtlas";
 const allPlaces = await getCollection("places");
-const initialPlace = allPlaces[Math.floor(Math.random() * allPlaces.length)].data;
+const initialPlace = allPlaces[Math.floor(Math.random() * allPlaces.length)];
 ---
 
 <BaseLayout titlePage={titlePage}>

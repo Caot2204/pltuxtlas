@@ -2,6 +2,7 @@
 import Logo from "./Logo.astro";
 import SearchBar from "../components/SearchBar";
 ---
+
 <style>
   nav {
     display: flex;
@@ -9,31 +10,49 @@ import SearchBar from "../components/SearchBar";
     padding: 1rem;
     align-items: center;
     justify-content: space-between;
-    height: 25px;
+    height: 10px;
     box-shadow: 0 0 4px 0 black;
     position: sticky;
+    background: #2a7b9b;
+    background: linear-gradient(
+      90deg,
+      rgba(42, 123, 155, 1) 0%,
+      rgba(87, 199, 133, 1) 50%,
+      rgba(237, 221, 83, 1) 100%
+    );
   }
 
   ul {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   ul li {
     list-style: none;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px;
+    padding: 5px 20px;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 1px rgb(120, 119, 119);
+    font-weight: bold;
+  }
+
+  a {
     text-decoration: none;
-    color: black;
+    color: whitesmoke;
+    text-transform: capitalize;
   }
 </style>
 
 <nav>
   <Logo />
   <ul>
-    <li>Playas</li>
-    <li>Ríos</li>
-    <li>Lugares turísticos</li>
-    <li>Actividades</li>
+    <li><a href={"/categoria/playa"}>Playas</a></li>
+    <li><a href={"/categoria/rio"}>Ríos</a></li>
+    <li><a href={"/categoria/turistico"}>Lugares Turísticos</a></li>
+    <li><a href={"/categoria/actividad"}>Actividades</a></li>
   </ul>
   <SearchBar />
 </nav>

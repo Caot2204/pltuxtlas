@@ -1,0 +1,51 @@
+---
+import PlaceItem from "../../components/PlaceItem.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const allPlaces = await getCollection("places");
+  const uniqueCategories = [
+    ...new Set(allPlaces.map((place: any) => place.data.category).flat()),
+  ];
+  return uniqueCategories.map((category: string) => ({
+    params: { category },
+  }));
+}
+
+const { category } = Astro.params;
+const allPlaces = await getCollection("places");
+const placesFiltered = allPlaces.filter(
+  (place: any) => place.data.category === category,
+);
+---
+
+<style>
+  .category-list {
+    padding: 10px;
+  }
+
+  .places-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 10px;
+  }
+</style>
+
+<BaseLayout>
+  <div class="category-list">
+    <h2>{category}</h2>
+    <div class="places-list">
+      {
+        placesFiltered.map((place: any) => (
+          <PlaceItem
+            pageRef={`../${place.id}`}
+            name={place.data.name}
+            hero={place.data.hero}
+          />
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

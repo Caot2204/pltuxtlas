@@ -1,33 +1,74 @@
 ---
 import PlaceItem from "./PlaceItem.astro";
 const { places } = Astro.props;
+
+const categories = new Set(places.map((place: any) => place.data.category));
+const placesByCategory: any[] = [];
+
+categories.forEach((element: any) => {
+  placesByCategory.push({
+    category: element,
+    places: places.filter((place: any) => place.data.category == element),
+  });
+});
 ---
 
 <section class="places-section">
-  <h3>Conoce más lugares:</h3>
-  <div class="places-list">
-    {
-      places.map((place: any) => (
-        <PlaceItem
-          pageRef={`./${place.id}`}
-          name={place.data.name}
-          hero={place.data.hero}
-        />
-      ))
-    }
-  </div>
+  {
+    placesByCategory.map((categoryWithPlaces: any) => (
+      <div class="category-places-container">
+        <h3>{categoryWithPlaces.category}</h3>
+        <div class="places-list">
+          {
+            categoryWithPlaces.places.length > 3 ?
+            (() => {
+              const places = categoryWithPlaces.places;
+              const indices: number[] = [];
+              while (indices.length < 3) {
+                const idx = Math.floor(Math.random() * places.length);
+                if (!indices.includes(idx)) indices.push(idx);
+              }
+              return indices.map(idx => (
+                <PlaceItem
+                  pageRef={`./${places[idx].id}`}
+                  name={places[idx].data.name}
+                  hero={places[idx].data.hero}
+                />
+              ));
+            })()
+            :
+            categoryWithPlaces.places.map((place: any) => (
+              <PlaceItem
+                pageRef={`./${place.id}`}
+                name={place.data.name}
+                hero={place.data.hero}
+              />
+            ))
+          }
+        </div>
+      </div>
+    ))
+  }
 </section>
 
 <style>
+  .category-places-container {
+    margin-bottom: 50px;
+  }
+
   .places-section {
     display: flex;
     flex-direction: column;
     padding: 20px;
   }
 
+  .places-section > h3 {
+    width: fit-content;
+  }
+
   .places-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 50px;
   }
 </style>

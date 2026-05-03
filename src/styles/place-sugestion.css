@@ -2,28 +2,37 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 70%;
+  width: 100%;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(../assets/fondo-sugerencia.jpg);
+  background-size: cover;
 }
 
 .header-place-sugestion {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px 20px 0 20px;
-}
-
-.show-sugestion-button {
-  width: 100px;
+  padding: 20px 10px 0 20px;
 }
 
 .place-data-sugestion {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   padding: 20px;
 }
 
+.place-data-col1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  padding: 20px 50px;
+}
+
 .sugest-image {
-  width: 90%;
+  width: 100%;
+  max-height: 380px;
   border-radius: 10px;
   box-shadow: 0 4px 4px 0 black;
 }
@@ -31,6 +40,65 @@
 .place-data-col2 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 20px;
+}
+
+.place-data-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.visit-page-button,
+.show-sugestion-button {
+  background-color: antiquewhite;
+  padding: 8px;
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.visit-page-button:hover,
+.show-sugestion-button:hover {
+  background-color: rgb(236, 175, 95);
+  transition-duration: 500ms;
+}
+
+.visita-label-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.visita-label {
+  font-size: 2rem;
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-stroke: 0.5px rgb(186, 241, 250);
+  background-image: url(../assets/fondo-letras.jpg);
+  background-size: 200%;
+  /* Enlarged for smooth animation */
+  background-position: 0 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-background 5s infinite alternate linear;
+}
+
+@keyframes animate-background {
+  0% {
+    background-position: 0 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
 }

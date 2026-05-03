@@ -10,16 +10,17 @@ const titleSite = "Pasea por Los Tuxtlas";
     align-items: center;
     gap: 1rem;
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 254);
+    text-shadow: 1px 1px 1px black;
   }
 
   .title-logo {
-    font-size: 20px;
+    font-size: 1.5rem;
     margin-left: 8px;
   }
 </style>
 
 <a class="logo-data" href="/">
   <Image src={logo} alt="Logo pagina" width={50} height={50} />
-  <h1 class="title-logo"><i>{titleSite}</i></h1>
+  <span class="title-logo"><strong><i>{titleSite}</i></strong></span>
 </a>

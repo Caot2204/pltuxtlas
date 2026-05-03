@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useState, useEffect } from 'preact/hooks';
 
 export default function Carousel({ imagenes, placeName }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -11,11 +11,15 @@ export default function Carousel({ imagenes, placeName }) {
     setCurrentIndex((prev) => (prev === 0 ? imagenes.length - 1 : prev - 1));
   };
 
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, imagenes)
+
   return (
     <div style={
       {
         position: 'relative',
-        width: '78%',
+        width: '90%',
         overflow: 'hidden',
         borderRadius: '12px'
       }
@@ -36,9 +40,6 @@ export default function Carousel({ imagenes, placeName }) {
                 alt={`${placeName} imagen ${index + 1}`}
                 style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover' }}
               />
-              <div style={{ position: 'absolute', bottom: 0, background: 'rgba(0,0,0,0.5)', color: 'white', width: '100%', padding: '1rem' }}>
-                <h3 style={{ margin: 0 }}>{placeName}</h3>
-              </div>
             </div>
           ))
         }
