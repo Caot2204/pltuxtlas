@@ -13,8 +13,8 @@ const carouselImages =
 
 <BaseLayout titlePage={frontmatter.name}>
   <div class=`place-container ${frontmatter.category}`>
-    <h1>{frontmatter.name}</h1>
     <div class="hero-data">
+      <h1 class="hero-name">{frontmatter.name}</h1>
       <Image
         class="hero-place"
         src={frontmatter.hero}
@@ -43,8 +43,10 @@ const carouselImages =
 
 <style>
   .place-container {
-    margin-top: 4px;
-    padding: 8px 150px;
+    padding: 0px 150px;
+    padding-bottom: 8px;
+    background-repeat: repeat-y;
+    background-size: contain;
   }
 
   .place-container > * {
@@ -53,22 +55,37 @@ const carouselImages =
 
   .turistico {
     background-image: url("../assets/fondo-turistico.webp");
-    background-repeat: repeat-y;
-    background-size: contain;
+  }
+
+  .playa {
+    background-image: url("../assets/fondo-playa.webp");
+  }
+
+  .rio {
+    background-image: url("../assets/fondo-rio.webp");
   }
 
   .hero-data {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    height: 85vh;
+    overflow: hidden;
+  }
+
+  .hero-name {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 2;
   }
 
   .hero-place {
-    width: 90%;
-    height: 50%;
-    border-radius: 10px;
-    box-shadow: 0 4px 4px 0 black;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .carrousel-div {
