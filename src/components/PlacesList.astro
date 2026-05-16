@@ -17,7 +17,15 @@ categories.forEach((element: any) => {
   {
     placesByCategory.map((categoryWithPlaces: any) => (
       <div class="category-places-container">
-        <h3>{categoryWithPlaces.category}</h3>
+        <div class="category-places-header">
+          <h3>{categoryWithPlaces.category}</h3>
+          {
+            categoryWithPlaces.places.length > 3 ?
+            <a href={`/categoria/${categoryWithPlaces.category}`}>Ver más...</a>
+            :
+            <></>
+          }
+        </div>
         <div class="places-list">
           {
             categoryWithPlaces.places.length > 3 ?
@@ -53,7 +61,22 @@ categories.forEach((element: any) => {
 
 <style>
   .category-places-container {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 50px;
+  }
+
+  .category-places-header {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .category-places-header a {
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 2px 4px 0 white;
   }
 
   .places-section {

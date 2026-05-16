@@ -3,17 +3,17 @@
 
 <div class="atributions-container">
   <p>Atribuciones a imágenes utilizadas:</p>
-  <ul class="atributions-list">
-    <li><a href="https://www.magnific.com/es/foto-gratis/foto-fascinante-olas-oceano-azul-cristalino_17530073.htm#fromView=search&page=1&position=6&uuid=5b1d8109-b65d-4d87-8e1f-71cbb68f3499&query=ola+mar">Ola</a></li>
-    <li><a href="https://www.magnific.com/es/vector-gratis/plantilla-etiqueta-mapa-tesoro-pirata-aislado_18218775.htm#fromView=search&page=1&position=5&uuid=f25bf8f6-5811-46ac-bdcf-f72b9f269f2a&query=mapa+animado">Imagen de brgfx en Magnific</a></li>
-    <li><a href="https://www.magnific.com/es/vector-gratis/cartel-plano-playa-mar-tropical-imprimir_2873627.htm#fromView=search&page=1&position=8&uuid=6a50748e-3f95-44b0-8536-6187639070c2&query=fondos+playa+tropical">Playa tropical fondo</a></li>
-    <li><a href="https://www.magnific.com/free-vector/scallop-sticker-white_16510023.htm#fromView=search&page=1&position=12&uuid=ac1fde4d-cb08-484b-860f-c2b1964e336d&query=concha">Concha marina</a></li>
-    <li><a href="https://www.magnific.com/free-vector/sea-life-snail-illustration-isolated_88802597.htm#fromView=search&page=2&position=48&uuid=31c9b051-afb0-43e6-9f92-6f2a4eaf8d4e&query=concha+mar">Caracola</a></li>
-    <li><a href="https://www.magnific.com/free-vector/starfish-with-orange-color-white-dots_136881210.htm#fromView=search&page=1&position=0&uuid=9b956622-3165-4b1c-a8a2-8d75a4c207f1&query=estrella+de+mar">Estrella mar</a></li>
-    <li><a href="https://www.magnific.com/free-vector/hand-drawn-cartoon-coral-illustration_49346645.htm#fromView=search&page=2&position=12&uuid=73cd28f7-4c99-442d-b547-7f95235e701e&query=coral+de+mar">Coral</a></li>
-    <li><a href="https://www.magnific.com/es/vector-gratis/arbustos-aislados-estilo-plano_29099040.htm#fromView=search&page=1&position=1&uuid=da3ec02e-16b6-40ff-a5c1-f495e2defa7b&query=arbusto">Arbusto</a></li>
-    <li><a href="https://www.magnific.com/es/vector-gratis/piedra-vacia-hierba-aislada_22745486.htm#fromView=search&page=1&position=9&uuid=7604802a-b110-4746-8581-fdb1f719fff3&query=roca+rio">Roca río</a></li>
-  </ul>
+  <div class="atributions-list">
+    <a href="https://www.magnific.com/es/foto-gratis/foto-fascinante-olas-oceano-azul-cristalino_17530073.htm#fromView=search&page=1&position=6&uuid=5b1d8109-b65d-4d87-8e1f-71cbb68f3499&query=ola+mar">Ola</a>
+    <a href="https://www.magnific.com/es/vector-gratis/plantilla-etiqueta-mapa-tesoro-pirata-aislado_18218775.htm#fromView=search&page=1&position=5&uuid=f25bf8f6-5811-46ac-bdcf-f72b9f269f2a&query=mapa+animado">Imagen de brgfx en Magnific</a>
+    <a href="https://www.magnific.com/es/vector-gratis/cartel-plano-playa-mar-tropical-imprimir_2873627.htm#fromView=search&page=1&position=8&uuid=6a50748e-3f95-44b0-8536-6187639070c2&query=fondos+playa+tropical">Playa tropical fondo</a>
+    <a href="https://www.magnific.com/free-vector/scallop-sticker-white_16510023.htm#fromView=search&page=1&position=12&uuid=ac1fde4d-cb08-484b-860f-c2b1964e336d&query=concha">Concha marina</a>
+    <a href="https://www.magnific.com/free-vector/sea-life-snail-illustration-isolated_88802597.htm#fromView=search&page=2&position=48&uuid=31c9b051-afb0-43e6-9f92-6f2a4eaf8d4e&query=concha+mar">Caracola</a>
+    <a href="https://www.magnific.com/free-vector/starfish-with-orange-color-white-dots_136881210.htm#fromView=search&page=1&position=0&uuid=9b956622-3165-4b1c-a8a2-8d75a4c207f1&query=estrella+de+mar">Estrella mar</a>
+    <a href="https://www.magnific.com/free-vector/hand-drawn-cartoon-coral-illustration_49346645.htm#fromView=search&page=2&position=12&uuid=73cd28f7-4c99-442d-b547-7f95235e701e&query=coral+de+mar">Coral</a>
+    <a href="https://www.magnific.com/es/vector-gratis/arbustos-aislados-estilo-plano_29099040.htm#fromView=search&page=1&position=1&uuid=da3ec02e-16b6-40ff-a5c1-f495e2defa7b&query=arbusto">Arbusto</a>
+    <a href="https://www.magnific.com/es/vector-gratis/piedra-vacia-hierba-aislada_22745486.htm#fromView=search&page=1&position=9&uuid=7604802a-b110-4746-8581-fdb1f719fff3&query=roca+rio">Roca río</a>
+  </div>
 </div>
 
 <style>
@@ -22,7 +22,12 @@
     margin-left: 20px;
   }
 
-  .atributions-list li a {
+  .atributions-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .atributions-list > a {
     text-decoration: none;
     color: black;
   }
